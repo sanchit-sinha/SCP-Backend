@@ -7,7 +7,6 @@ from .utils import *
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
 class Login(APIView):
     def post(self, request, *args, **kwargs):
         user = IsLoggedIn(request)
@@ -41,3 +40,4 @@ class Logout(APIView):
             del request.session["username"]
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
+
